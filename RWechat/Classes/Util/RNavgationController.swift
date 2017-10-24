@@ -10,7 +10,6 @@ import UIKit
 
 class RNavgationController: UINavigationController {
 
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationBar.isTranslucent = false
     }

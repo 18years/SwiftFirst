@@ -13,13 +13,7 @@ class MessageController: RTabelController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        if #available(iOS 11.0, *) {
-            Debug_print(msg: "ios 11")
-            tableView.contentInsetAdjustmentBehavior = .automatic
-        } else {
-            Debug_print(msg: "ios 11 之前")
-            self.automaticallyAdjustsScrollViewInsets = false
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,6 +24,8 @@ class RTabelController: RBaseController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
@@ -43,6 +45,13 @@ class RTabelController: RBaseController, UITableViewDelegate, UITableViewDataSou
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+        
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.getFirst()
         })

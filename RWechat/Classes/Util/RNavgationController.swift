@@ -10,10 +10,13 @@ import UIKit
 
 class RNavgationController: UINavigationController {
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationBar.isTranslucent = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

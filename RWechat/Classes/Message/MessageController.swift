@@ -12,13 +12,18 @@ class MessageController: RTabelController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
+        fetchData()
+    }
+    
+    func fetchData() {
+        RNetwork.GET(url: "message", parameters: nil, useProtocol: true) { (responseData) in
+            Debug_print(msg: "\(MessageController.self)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

@@ -26,6 +26,8 @@
 		5A01458E1F8B68910066F6D5 /* contact.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457D1F8B68910066F6D5 /* contact.json */; };
 		5A01458F1F8B68910066F6D5 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457E1F8B68910066F6D5 /* message.json */; };
 		5A0145901F8B68910066F6D5 /* moments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457F1F8B68910066F6D5 /* moments.json */; };
+		5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF761FA028A200ADE123 /* RNetwork.swift */; };
+		5A7BEF791FA02E7000ADE123 /* RURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */; };
 		5A84E7FE1F9849C600F05060 /* MessageBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */; };
 		5AB6DC431F57A99300658BCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DC3B1F57A99300658BCD /* AppDelegate.swift */; };
 		5AB6DC451F57A99300658BCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6DC3D1F57A99300658BCD /* LaunchScreen.storyboard */; };
@@ -65,6 +67,8 @@
 		5A01457D1F8B68910066F6D5 /* contact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contact.json; sourceTree = "<group>"; };
 		5A01457E1F8B68910066F6D5 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		5A01457F1F8B68910066F6D5 /* moments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moments.json; sourceTree = "<group>"; };
+		5A7BEF761FA028A200ADE123 /* RNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNetwork.swift; sourceTree = "<group>"; };
+		5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURLProtocol.swift; sourceTree = "<group>"; };
 		5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBaseCell.swift; sourceTree = "<group>"; };
 		5AB6DC251F57A96000658BCD /* RWechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB6DC3B1F57A99300658BCD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,23 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		5A7BEF741FA0286200ADE123 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5A7BEF751FA0286200ADE123 /* Protocol */,
+				5A7BEF761FA028A200ADE123 /* RNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5A7BEF751FA0286200ADE123 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		5A84E7FB1F9849A100F05060 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +235,7 @@
 				5AB6DC561F58F93F00658BCD /* Contact */,
 				5AB6DC571F58F93F00658BCD /* Me */,
 				5AB6DC581F58F93F00658BCD /* Message */,
+				5A7BEF741FA0286200ADE123 /* Network */,
 				5AB6DC591F58F93F00658BCD /* Util */,
 			);
 			path = Classes;
@@ -430,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB6DC5F1F58F9E500658BCD /* RBaseController.swift in Sources */,
+				5A7BEF791FA02E7000ADE123 /* RURLProtocol.swift in Sources */,
 				5AB6DC431F57A99300658BCD /* AppDelegate.swift in Sources */,
 				5AB6DC611F58FA2800658BCD /* ContactController.swift in Sources */,
 				5AB6DC651F58FA4200658BCD /* MessageController.swift in Sources */,
@@ -440,6 +463,7 @@
 				5AB6DC541F58F01E00658BCD /* R.generated.swift in Sources */,
 				5AB6DC631F58FA3500658BCD /* MeController.swift in Sources */,
 				5AB6DC681F590D7900658BCD /* DicorverController.swift in Sources */,
+				5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */,
 				5AB6DC5D1F58F9A900658BCD /* RNavgationController.swift in Sources */,
 				5AB6DC5B1F58F97800658BCD /* RTabBarController.swift in Sources */,
 			);

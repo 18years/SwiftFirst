@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = RTabBarController()
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
+        
+        URLProtocol.registerClass(RURLProtocol.self)
+        
         return true
     }
 

@@ -8,12 +8,17 @@
 
 import UIKit
 
-class RURLProtocol: URLProtocol, URLSessionDataDelegate,URLSessionTaskDelegate,URLSessionDelegate {
-    var session : URLSessionDataTask?
+class RURLProtocol: URLProtocol, URLSessionDelegate, URLSessionDataDelegate {
+    var dataTask : URLSessionDataTask?
+    
     class func defaultSessionConfiguration() -> URLSessionConfiguration {
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         config.protocolClasses = [RURLProtocol.self]
         return config
+    }
+    
+    override class func canInit(with request: URLRequest) -> Bool {
+        return false
     }
     
     /** 是否需要拦截 */
@@ -40,17 +45,40 @@ class RURLProtocol: URLProtocol, URLSessionDataDelegate,URLSessionTaskDelegate,U
             httpHeaders = self.request.allHTTPHeaderFields
             httpHeaders?.removeValue(forKey: "RNetwork")
         }
+        
         var request = URLRequest.init(url: self.request.url!)
         request.allHTTPHeaderFields = httpHeaders
+        #if DEBUG
+            request.url = URL.init(string: "https://api.seniverse.com/v3/weather/now.json?key=ge4l7elh3k0feaz3&location=zhengzhou&language=zh-Hans&unit=c")
+        #endif
         
-        session = URLSession.shared.dataTask(with: request)
-        session!.resume()
+        if kDataMsg == 1 {
+            let data = Data.message()
+            let str = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            client?.urlProtocol(self, didLoad: Data.message())
+            client?.urlProtocolDidFinishLoading(self)
+        } else {
+            let session = URLSession.init(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue())
+            dataTask = session.dataTask(with: request)
+            dataTask?.resume()
+        }
+        
     }
 
     override func stopLoading() {
-        session?.cancel()
+        dataTask?.resume()
     }
     
     //TODO: 网络代理中处理 数据
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+        completionHandler(.allow)
+    }
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        client?.urlProtocol(self, didLoad: data)
+    }
+    /** 请求完成 */
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        client?.urlProtocolDidFinishLoading(self)
+    }
     
 }

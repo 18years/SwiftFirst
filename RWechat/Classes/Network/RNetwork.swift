@@ -40,6 +40,7 @@ extension RNetwork {
         }
         
         RNetwork.sharedInstance.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers) .responseJSON { (responseData) in
+            
             responstBlk(responseData)
         }
     }

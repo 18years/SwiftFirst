@@ -26,6 +26,7 @@
 		5A01458E1F8B68910066F6D5 /* contact.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457D1F8B68910066F6D5 /* contact.json */; };
 		5A01458F1F8B68910066F6D5 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457E1F8B68910066F6D5 /* message.json */; };
 		5A0145901F8B68910066F6D5 /* moments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457F1F8B68910066F6D5 /* moments.json */; };
+		5A264E531FA31D3000BCA41D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264E521FA31D3000BCA41D /* Data.swift */; };
 		5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF761FA028A200ADE123 /* RNetwork.swift */; };
 		5A7BEF791FA02E7000ADE123 /* RURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */; };
 		5A84E7FE1F9849C600F05060 /* MessageBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */; };
@@ -67,6 +68,7 @@
 		5A01457D1F8B68910066F6D5 /* contact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contact.json; sourceTree = "<group>"; };
 		5A01457E1F8B68910066F6D5 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		5A01457F1F8B68910066F6D5 /* moments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moments.json; sourceTree = "<group>"; };
+		5A264E521FA31D3000BCA41D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5A7BEF761FA028A200ADE123 /* RNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNetwork.swift; sourceTree = "<group>"; };
 		5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURLProtocol.swift; sourceTree = "<group>"; };
 		5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBaseCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				5A7BEF751FA0286200ADE123 /* Protocol */,
 				5A7BEF761FA028A200ADE123 /* RNetwork.swift */,
+				5A264E521FA31D3000BCA41D /* Data.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */,
 				5AB6DC5D1F58F9A900658BCD /* RNavgationController.swift in Sources */,
 				5AB6DC5B1F58F97800658BCD /* RTabBarController.swift in Sources */,
+				5A264E531FA31D3000BCA41D /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

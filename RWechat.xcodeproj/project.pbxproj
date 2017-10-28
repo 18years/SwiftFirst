@@ -27,6 +27,8 @@
 		5A01458F1F8B68910066F6D5 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457E1F8B68910066F6D5 /* message.json */; };
 		5A0145901F8B68910066F6D5 /* moments.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A01457F1F8B68910066F6D5 /* moments.json */; };
 		5A264E531FA31D3000BCA41D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264E521FA31D3000BCA41D /* Data.swift */; };
+		5A264E561FA45F2500BCA41D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264E551FA45F2400BCA41D /* BaseModel.swift */; };
+		5A264E581FA45F3E00BCA41D /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A264E571FA45F3E00BCA41D /* MessageModel.swift */; };
 		5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF761FA028A200ADE123 /* RNetwork.swift */; };
 		5A7BEF791FA02E7000ADE123 /* RURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */; };
 		5A84E7FE1F9849C600F05060 /* MessageBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */; };
@@ -69,6 +71,9 @@
 		5A01457E1F8B68910066F6D5 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		5A01457F1F8B68910066F6D5 /* moments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moments.json; sourceTree = "<group>"; };
 		5A264E521FA31D3000BCA41D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5A264E551FA45F2400BCA41D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		5A264E571FA45F3E00BCA41D /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		5A264E5A1FA4723D00BCA41D /* RWechat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWechat-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A7BEF761FA028A200ADE123 /* RNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNetwork.swift; sourceTree = "<group>"; };
 		5A7BEF781FA02E7000ADE123 /* RURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RURLProtocol.swift; sourceTree = "<group>"; };
 		5A84E7FD1F9849C600F05060 /* MessageBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBaseCell.swift; sourceTree = "<group>"; };
@@ -154,6 +159,7 @@
 				5A7BEF751FA0286200ADE123 /* Protocol */,
 				5A7BEF761FA028A200ADE123 /* RNetwork.swift */,
 				5A264E521FA31D3000BCA41D /* Data.swift */,
+				5A264E551FA45F2400BCA41D /* BaseModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 		5A84E7FB1F9849A100F05060 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5A264E571FA45F3E00BCA41D /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 				5AB6DC3B1F57A99300658BCD /* AppDelegate.swift */,
 				5AB6DC3D1F57A99300658BCD /* LaunchScreen.storyboard */,
 				5AB6DC411F57A99300658BCD /* Info.plist */,
+				5A264E5A1FA4723D00BCA41D /* RWechat-Bridging-Header.h */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 					5AB6DC241F57A96000658BCD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = MB745E7A8D;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -461,10 +470,12 @@
 				5AB6DC651F58FA4200658BCD /* MessageController.swift in Sources */,
 				5AB6DC6B1F5FCD9A00658BCD /* UIViewController.swift in Sources */,
 				5A01456A1F8B5BE60066F6D5 /* RTabelController.swift in Sources */,
+				5A264E581FA45F3E00BCA41D /* MessageModel.swift in Sources */,
 				5A01456C1F8B5D390066F6D5 /* RUtil.swift in Sources */,
 				5A84E7FE1F9849C600F05060 /* MessageBaseCell.swift in Sources */,
 				5AB6DC541F58F01E00658BCD /* R.generated.swift in Sources */,
 				5AB6DC631F58FA3500658BCD /* MeController.swift in Sources */,
+				5A264E561FA45F2500BCA41D /* BaseModel.swift in Sources */,
 				5AB6DC681F590D7900658BCD /* DicorverController.swift in Sources */,
 				5A7BEF771FA028A200ADE123 /* RNetwork.swift in Sources */,
 				5AB6DC5D1F58F9A900658BCD /* RNavgationController.swift in Sources */,
@@ -585,13 +596,16 @@
 			baseConfigurationReference = 8E2B34315B3FF51588636916 /* Pods-RWechat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MB745E7A8D;
 				INFOPLIST_FILE = RWechat/Others/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = rockey.RWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/$PROJECT_NAME/Others/RWechat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -601,12 +615,14 @@
 			baseConfigurationReference = 1D2303E42E4F26F3A68325B1 /* Pods-RWechat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MB745E7A8D;
 				INFOPLIST_FILE = RWechat/Others/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rockey.RWechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SRCROOT/$PROJECT_NAME/Others/RWechat-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

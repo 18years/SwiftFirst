@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0EE9A1650E904F7D078553C7F3BD44F6"
+               BlueprintIdentifier = "0305B36E7EE6614A99D44A19237C7D4E"
                BuildableName = "Pods_RWechat.framework"
                BlueprintName = "Pods-RWechat"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0EE9A1650E904F7D078553C7F3BD44F6"
+            BlueprintIdentifier = "0305B36E7EE6614A99D44A19237C7D4E"
             BuildableName = "Pods_RWechat.framework"
             BlueprintName = "Pods-RWechat"
             ReferencedContainer = "container:Pods.xcodeproj">

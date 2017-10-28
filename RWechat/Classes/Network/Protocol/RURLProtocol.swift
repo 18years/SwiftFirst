@@ -53,8 +53,6 @@ class RURLProtocol: URLProtocol, URLSessionDelegate, URLSessionDataDelegate {
         #endif
         
         if kDataMsg == 1 {
-            let data = Data.message()
-            let str = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
             client?.urlProtocol(self, didLoad: Data.message())
             client?.urlProtocolDidFinishLoading(self)
         } else {

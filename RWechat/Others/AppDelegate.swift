@@ -19,9 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
-        URLProtocol.registerClass(RURLProtocol.self)
+        globalConfig()
         
         return true
+    }
+    
+    func globalConfig() {
+        URLProtocol.registerClass(RURLProtocol.self)
+        
+        UINavigationBar.appearance().barTintColor = kNavBarColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

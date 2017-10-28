@@ -15,7 +15,6 @@ class RNavgationController: UINavigationController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

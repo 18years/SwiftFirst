@@ -7,25 +7,42 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class MessageController: RTabelController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         fetchData()
     }
     
     func fetchData() {
-        RNetwork.GET(url: "message", parameters: nil, useProtocol: true) { (responseData) in
-            Debug_print(msg: "\(MessageController.self)")
+        GET(url: "message", parameters: nil, useProtocol: true) { (responseData) in
+            let resObj = responseData as! [[String: Any]]
+            var list = [MessageModel]()
+            for item in resObj {
+                let model = Mapper<MessageModel>().map(JSON: item)
+                list.append(model!)
+            }
+            
+            Debug_print(msg: "\(String(describing: list))")
+            
+            if self.tableView.mj_header.isRefreshing() {
+                self.tableView.mj_header.endRefreshing()
+            } else if self.tableView.mj_footer.isRefreshing() {
+                self.tableView.mj_footer.endRefreshing()
+            }
         }
+    }
+    
+    override func getFirst() {
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }
 
 extension MessageController {

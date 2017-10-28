@@ -22,6 +22,7 @@ let kBaseBackgroundColor : UIColor = UIColor.init(hex6: 0xf1f1f1)
 let kNavBarColor : UIColor = UIColor.init(hex6: 0x289bef)
 
 //MARK: 长度
+let kWindow: UIWindow = UIApplication.shared.keyWindow!
 let kScreenW: CGFloat = UIScreen.main.bounds.size.width
 let kScreenH: CGFloat = UIScreen.main.bounds.size.height
 /** 相对长度以 IPhone6 为基准 */

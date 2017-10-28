@@ -12,11 +12,16 @@ def pods
     pod 'Kingfisher'
     pod 'ObjectMapper'
     pod 'SwiftyJSON'
+    pod 'HandyJSON', '~> 1.8.0'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
     
     pod 'MJRefresh'
     pod 'FMDB'
     pod 'DZNEmptyDataSet'
     pod 'UIColor_Hex_Swift'
+    pod 'MBProgressHUD','~> 1.0.0'
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 end
 
 target 'RWechat' do

@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import ObjectMapper
 
 class RSessionManager: Alamofire.SessionManager {
     
@@ -33,15 +35,15 @@ extension RNetwork {
     class func GET(url: String, parameters: Parameters?, useProtocol: Bool, responstBlk : @escaping (Any?)->Void)  {
     
         /** 这个的意义也只是 可以在 Protocol 中区分 request是否需要被拦截 */
-        var headers: [String: String]? = nil
+        var headers: [String: String]? = SessionManager.defaultHTTPHeaders
         if useProtocol {
-            headers = SessionManager.defaultHTTPHeaders
             headers!["RNetwork"] = "1"
         }
         
         RNetwork.sharedInstance.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers) .responseJSON { (responseData) in
-            
-            responstBlk(responseData)
+            let resData = JSON.init(data: responseData.data!, options: JSONSerialization.ReadingOptions.mutableLeaves, error: nil).dictionaryObject
+            let obj = ObjectMapper.Mapper<BaseModel>().map(JSON: resData!)
+            responstBlk(obj)
         }
     }
     

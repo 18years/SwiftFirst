@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MessageBaseCell: UITableViewCell {
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +19,12 @@ class MessageBaseCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    
+    func setCellContent(_ model: MessageModel) {
+        imageView.kf.setImage(with: URL.init(string: model.avatar_url!), placeholder: R.image.contacts_add_game(), options: [.forceRefresh], progressBlock: nil, completionHandler: nil)
+        nameLabel.text = model.nickname
+        timeLabel.text = model.ctime
+        msgLabel.text = model.message
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,7 +50,7 @@ class MessageBaseCell: UITableViewCell {
         imageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.separatorInset.left)
             make.centerY.equalTo(self.contentView)
-            make.size.equalTo(CGSize.init(width: kAppWidth(width: 40), height: kAppHeight(height: 40)))
+            make.size.equalTo(CGSize.init(width: kAppWidth(width: 50), height: kAppWidth(width: 50)))
         }
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.imageView.snp.right).offset(kAppWidth(width: 6))
@@ -57,7 +64,10 @@ class MessageBaseCell: UITableViewCell {
             make.width.equalTo(kAppWidth(width: 55))
         }
         msgLabel.snp.makeConstraints { (make) in
-            
+            make.left.equalTo(self.nameLabel)
+            make.right.equalTo(self.timeLabel)
+            make.top.equalTo(self.nameLabel.snp.bottom)
+            make.bottom.equalTo(self.imageView)
         }
     }
     

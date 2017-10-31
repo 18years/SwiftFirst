@@ -10,9 +10,13 @@ import UIKit
 import ObjectMapper
 
 class MessageController: RTabelController {
+    var dataList = [MessageModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.snp.remakeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets.init(top: 0, left: 0, bottom:kTabBarHeight(vc: self) , right: 0))
+        }
  
         fetchData()
     }
@@ -20,14 +24,11 @@ class MessageController: RTabelController {
     func fetchData() {
         GET(url: "message", parameters: nil, useProtocol: true) { (responseData) in
             let resObj = responseData as! [[String: Any]]
-            var list = [MessageModel]()
             for item in resObj {
                 let model = Mapper<MessageModel>().map(JSON: item)
-                list.append(model!)
+                self.dataList.append(model!)
             }
-            
-            Debug_print(msg: "\(String(describing: list))")
-            
+            self.tableView.reloadData()
             if self.tableView.mj_header.isRefreshing() {
                 self.tableView.mj_header.endRefreshing()
             } else if self.tableView.mj_footer.isRefreshing() {
@@ -51,12 +52,12 @@ extension MessageController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageBaseCell")
-        
+        let cell: MessageBaseCell! = tableView.dequeueReusableCell(withIdentifier: "MessageBaseCell") as! MessageBaseCell
+        cell.setCellContent(dataList[indexPath.row])
         return cell!
     }
     

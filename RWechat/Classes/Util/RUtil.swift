@@ -16,7 +16,6 @@ let kBaseUrl: String = "http://www.baidu.com/"
 //MARK: 其它
 let kSystemVersion: CGFloat = CGFloat(Float(UIDevice.current.systemVersion)!)
 
-
 //MARK: 色彩
 let kBaseBackgroundColor : UIColor = UIColor.init(hex6: 0xf1f1f1)
 let kNavBarColor : UIColor = UIColor.init(hex6: 0x289bef)
@@ -42,6 +41,17 @@ public func kAppScaleFont(size: CGFloat) -> UIFont {
 }
 
 let kButtonH = 45.0
+
+public func kTabBarHeight(vc: UIViewController) -> CGFloat {
+    return (vc.tabBarController?.tabBar.bounds.size.height)!
+}
+public func kBottomCornerH() -> CGFloat {
+    if kIsIphoneX {
+        return 34
+    }
+    return 0
+}
+let kIsIphoneX:Bool = (kScreenH==812.0)
 
 //MARK: 调试信息
 public func Debug_print(msg: String) {

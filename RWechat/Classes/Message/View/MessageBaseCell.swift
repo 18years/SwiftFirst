@@ -39,12 +39,12 @@ class MessageBaseCell: UITableViewCell {
         contentView.addSubview(timeLabel)
         contentView.addSubview(msgLabel)
         #if DEBUG
-            imageView.layer.borderColor = UIColor.cyan.cgColor
-            imageView.layer.borderWidth = 1.0
-            nameLabel.layer.borderColor = UIColor.cyan.cgColor
-            nameLabel.layer.borderWidth = 1.0
-            timeLabel.layer.borderColor = UIColor.cyan.cgColor
-            timeLabel.layer.borderWidth = 1.0
+//            imageView.layer.borderColor = UIColor.cyan.cgColor
+//            imageView.layer.borderWidth = 1.0
+//            nameLabel.layer.borderColor = UIColor.cyan.cgColor
+//            nameLabel.layer.borderWidth = 1.0
+//            timeLabel.layer.borderColor = UIColor.cyan.cgColor
+//            timeLabel.layer.borderWidth = 1.0
         #endif
         
         imageView.snp.makeConstraints { (make) in
